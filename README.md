@@ -13,9 +13,8 @@
 | 담당 역할 | AI 개발, 모델 결합 및 파이프라인 통합 |
 | 주요 기술 | Python, PyTorch, Transformers, Whisper, BERT/KoBERT, OpenAI API |
 
-## 내가 맡은 작업
-
-### 직접 개발
+## TASK
+### 개발
 
 - **음성 전사·전처리**: Whisper 기반 STT, 음성 응답의 텍스트 변환, 발화 텍스트 정제
 - **텍스트 분석**: BERT/KoBERT 기반 분류, GPT 기반 질문·응답 의미 평가와 대화 문맥 연결성 평가
