@@ -1,0 +1,53 @@
+# Python and local environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.ipynb_checkpoints/
+.idea/
+.vscode/
+
+# Credentials
+.env
+.env.*
+!.env.example
+key/
+*secret*
+*credential*
+*.pem
+
+# Original research data and personal records
+datasets/
+data/
+raw/
+wav/
+ko_wav/
+mp4/
+nodementia/
+transcription_dementia_bank/
+user_info/
+logs/
+*.wav
+*.mp3
+*.mp4
+*.csv
+*.cha
+
+# Trained weights and generated outputs
+*.pt
+*.pth
+*.pkl
+*.bin
+*.safetensors
+*.zip
+checkpoints/
+results/
+output/
+*_output/
+*_results/
+*.log
+
+# OS files
+Thumbs.db
+.DS_Store
