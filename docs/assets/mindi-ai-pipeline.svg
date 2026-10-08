@@ -37,9 +37,12 @@
   <path d="M260 465 H334" class="line"/>
   <path d="M290 465 V377 Q290 363 304 363 H706 Q720 363 720 377 V402" class="line"/>
   <circle cx="290" cy="465" r="4" fill="#8193AC"/>
-  <path d="M838 259 H881 Q895 259 895 273 V406 Q895 420 909 420 H932" class="line"/>
-  <path d="M838 465 H932" class="line"/>
-  <path d="M452 528 V541 Q452 555 466 555 H888 Q902 555 902 541 V524 Q902 510 916 510 H932" class="line"/>
+  <path d="M838 259 H876 Q890 259 890 273 V438" class="line" style="marker-end:none"/>
+  <path d="M838 465 H890" class="line" style="marker-end:none"/>
+  <path d="M452 528 V541 Q452 555 466 555 H876 Q890 555 890 541 V438" class="line" style="marker-end:none"/>
+  <circle cx="890" cy="438" r="4" fill="#8193AC"/>
+  <circle cx="890" cy="465" r="3.5" fill="#8193AC"/>
+  <path d="M890 438 H932" class="line"/>
   <path d="M150 535 V718 Q150 732 164 732 H334" class="care-line"/>
   <path d="M569 732 H603" class="care-line"/>
   <path d="M838 732 H932" class="care-line"/>
