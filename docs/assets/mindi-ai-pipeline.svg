@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="870" viewBox="0 0 1200 870" role="img" aria-labelledby="title desc">
+  <title id="title">MINDI AI 처리 구조</title>
+  <desc id="desc">사용자 음성은 음향 분석과 Whisper 음성 전사로 전달됩니다. 전사 텍스트는 BERT·KoBERT 분류와 GPT 문항·문맥 평가에 사용됩니다. 세 분석 결과는 결합되어 리포트로 정리됩니다. 별도 케어 흐름은 전사 텍스트에서 일상·회상 대화, 기록·키워드 추출, 대화 평가·주간 요약으로 연결됩니다.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L7 4.5 L1 8" fill="none" stroke="#8193AC" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker>
+    <marker id="care-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L7 4.5 L1 8" fill="none" stroke="#9574BA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker>
+    <style>
+      text { font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif; }
+      .heading { font-size: 23px; font-weight: 700; fill: #1E293B; }
+      .body { font-size: 17px; fill: #617086; }
+      .label { font-size: 15px; font-weight: 700; letter-spacing: 1.6px; fill: #8190A3; }
+      .line { fill: none; stroke: #8193AC; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; marker-end: url(#arrow); }
+      .care-line { fill: none; stroke: #9574BA; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; marker-end: url(#care-arrow); }
+    </style>
+  </defs>
+
+  <rect x="1" y="1" width="1198" height="868" rx="24" fill="#FFFFFF" stroke="#E4EAF1"/>
+  <text x="40" y="60" font-size="34" font-weight="800" fill="#172A43">MINDI</text>
+  <rect x="179" y="34" width="128" height="30" rx="15" fill="#EEF3FA"/>
+  <text x="243" y="54" text-anchor="middle" font-size="13" letter-spacing="1.6" font-weight="700" fill="#506785">AI PIPELINE</text>
+  <text x="40" y="97" font-size="19" fill="#617086">음성 입력에서 분석과 대화 리포트까지</text>
+  <path d="M40 119 H1160" stroke="#E9EDF3"/>
+  <text x="40" y="151" class="label">01 · INPUT</text>
+  <text x="334" y="151" class="label">02 · AI MODULES</text>
+  <text x="932" y="151" class="label">03 · REPORTS</text>
+
+  <rect x="310" y="174" width="550" height="405" rx="22" fill="#F3F7FD" stroke="#DFE7F5"/>
+  <circle cx="333" cy="192" r="4" fill="#4B70BD"/>
+  <text x="347" y="198" font-size="15" font-weight="700" fill="#4A6592">음향 · 언어 분석</text>
+  <rect x="310" y="632" width="550" height="173" rx="22" fill="#F8F4FC" stroke="#EBE1F6"/>
+  <circle cx="333" cy="657" r="4" fill="#8E63B5"/>
+  <text x="347" y="663" font-size="15" font-weight="700" fill="#80599E">일상 · 회상 대화 케어</text>
+
+  <!-- Routes are behind the cards so all entry and exit points stay clear. -->
+  <path d="M260 259 H334" class="line"/>
+  <path d="M150 313 V399" class="line"/>
+  <path d="M260 465 H334" class="line"/>
+  <path d="M290 465 V377 Q290 363 304 363 H706 Q720 363 720 377 V402" class="line"/>
+  <circle cx="290" cy="465" r="4" fill="#8193AC"/>
+  <path d="M838 259 H881 Q895 259 895 273 V406 Q895 420 909 420 H932" class="line"/>
+  <path d="M838 465 H932" class="line"/>
+  <path d="M452 528 V541 Q452 555 466 555 H888 Q902 555 902 541 V524 Q902 510 916 510 H932" class="line"/>
+  <path d="M150 535 V718 Q150 732 164 732 H334" class="care-line"/>
+  <path d="M569 732 H603" class="care-line"/>
+  <path d="M838 732 H932" class="care-line"/>
+  <text x="57" y="357" font-size="15" fill="#71849A">음성 전사</text>
+  <text x="309" y="351" font-size="15" fill="#71849A">전사 텍스트</text>
+  <text x="170" y="697" font-size="15" fill="#9574BA">전사 텍스트</text>
+
+  <!-- Input -->
+  <rect x="40" y="205" width="220" height="108" rx="16" fill="#ECF8F5" stroke="#CFE7E1"/>
+  <rect x="60" y="224" width="30" height="30" rx="9" fill="#D6EEE7"/>
+  <g fill="none" stroke="#2E8674" stroke-width="1.8" stroke-linecap="round"><rect x="71" y="229" width="8" height="13" rx="4"/><path d="M68 239 V242 Q68 248 75 248 Q82 248 82 242 V239 M75 248 V252 M71 252 H79"/></g>
+  <text x="60" y="284" class="heading" font-size="22">사용자 음성 응답</text>
+  <rect x="40" y="399" width="220" height="136" rx="16" fill="#FFFFFF" stroke="#CEE3DD"/>
+  <text x="60" y="434" font-size="15" font-weight="700" letter-spacing="1" fill="#32816F">SPEECH TO TEXT</text>
+  <text x="60" y="473" class="heading">Whisper</text>
+  <text x="60" y="509" class="body">음성 → 텍스트 변환</text>
+
+  <!-- Analysis -->
+  <rect x="334" y="215" width="504" height="106" rx="14" fill="#FFFFFF" stroke="#D8E3F2"/>
+  <rect x="334" y="215" width="5" height="106" rx="2.5" fill="#6C8ACA"/>
+  <text x="356" y="247" class="heading" font-size="21">음향 특징 분석</text>
+  <text x="356" y="276" class="body">Mel 스펙트로그램 · 음향 수치 특징</text>
+  <text x="356" y="301" font-size="16" fill="#4B70BD">ViT + LightGBM / PyTorch 분류기</text>
+  <rect x="334" y="402" width="235" height="126" rx="14" fill="#FFFFFF" stroke="#D8E3F2"/>
+  <text x="354" y="439" class="heading" font-size="21">텍스트 분류</text>
+  <text x="354" y="472" font-size="18" font-weight="600" fill="#4B70BD">BERT / KoBERT</text>
+  <text x="354" y="504" font-size="16" fill="#617086">발화의 언어 특징 분석</text>
+  <rect x="603" y="402" width="235" height="126" rx="14" fill="#FFFFFF" stroke="#D8E3F2"/>
+  <text x="623" y="439" class="heading" font-size="21">문항 · 문맥 평가</text>
+  <text x="623" y="472" font-size="18" font-weight="600" fill="#4B70BD">GPT</text>
+  <text x="623" y="504" font-size="16" fill="#617086">응답 의미 · 문맥 연결성</text>
+
+  <!-- Combined analysis and report -->
+  <rect x="932" y="384" width="228" height="184" rx="16" fill="#EFF4FA" stroke="#D2DEED"/>
+  <text x="952" y="420" font-size="21" font-weight="700" fill="#273E5D">모델 결과 결합</text>
+  <text x="952" y="449" font-size="15" fill="#617086">음향 · 텍스트 · 문항 점수</text>
+  <path d="M952 469 H1140" stroke="#D2DEED"/>
+  <text x="952" y="512" font-size="21" font-weight="700" fill="#273E5D">분석 결과 리포트</text>
+  <text x="952" y="541" font-size="15" fill="#617086">결합된 분석 결과 정리</text>
+
+  <!-- Conversation care -->
+  <rect x="334" y="680" width="235" height="105" rx="14" fill="#FFFFFF" stroke="#E4D7EF"/>
+  <text x="354" y="719" font-size="21" font-weight="700" fill="#624481">일상 · 회상 대화</text>
+  <text x="354" y="755" font-size="16" fill="#7E6992">GPT 기반 질문 생성</text>
+  <rect x="603" y="680" width="235" height="105" rx="14" fill="#FFFFFF" stroke="#E4D7EF"/>
+  <text x="623" y="719" font-size="20" font-weight="700" fill="#624481">기록 · 키워드 추출</text>
+  <text x="623" y="755" font-size="16" fill="#7E6992">대화 로그 · 핵심 키워드</text>
+  <rect x="932" y="680" width="228" height="105" rx="16" fill="#F5EFFA" stroke="#E0D2ED"/>
+  <text x="952" y="719" font-size="20" font-weight="700" fill="#624481">대화 리포트</text>
+  <text x="952" y="755" font-size="16" fill="#7E6992">대화 평가 · 주간 요약</text>
+
+  <text x="40" y="839" font-size="14" fill="#8290A2">분석 기능과 케어 기능의 주요 모듈 및 연결 흐름</text>
+  <text x="1160" y="839" text-anchor="end" font-size="14" letter-spacing="1.2" fill="#8290A2">2025 · CAPSTONE PROJECT</text>
+</svg>
